@@ -1,14 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-const Test = (props) => {
-    const { list } = props
+const Test = ({list}) => {
+
     const newList = list.map(res => {
-        return (
-            <div key={res.id}>
-                <div> my name is {res.name}</div>
-                <div>my age is {res.age}</div>
-            </div>
-        )
+        if(res.age===20) {
+            return (
+                <div key={res.id}>
+                    <div> my name is {res.name}</div>
+                    <div>my age is {res.age}</div>
+                </div>
+            )
+        }else {
+            return null;
+        }
+   
     })
     return (
         <div>
